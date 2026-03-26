@@ -15,8 +15,12 @@ function intData() {
     }]
     localStorage.setItem('users', JSON.stringify(mockData))
     return mockData
+
   }
 }
+
+
+
 
 const listUser = intData()
 
