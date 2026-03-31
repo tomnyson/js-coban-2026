@@ -129,16 +129,62 @@ logoutbtn.addEventListener('click', () => {
 })
 
 
-function handleXoa (ma) {
-    const check  = confirm(`bạn chắc xóa product id ${ma} không  ?`)
-    if(check) {
+function handleXoa(ma) {
+    const check = confirm(`bạn chắc xóa product id ${ma} không  ?`)
+    if (check) {
         const products = initProduct();
         const deletedProducts = products.filter(product => product.maSanPham !== ma)
         console.log(deletedProducts)
-         localStorage.setItem('products', JSON.stringify(deletedProducts))
-         alert("xóa thanh cong")
-    // load lai giao dien
+        localStorage.setItem('products', JSON.stringify(deletedProducts))
+        alert("xóa thanh cong")
+        // load lai giao dien
         hienthi()
+    }
+}
+// khoi tao model
+
+
+
+function handleEdit(ma) {
+    const check = confirm(`bạn chắc sửa product id ${ma} không  ?`)
+    const frmModel = document.getElementById(`modalForm`)
+    const myModal = bootstrap.Modal.getOrCreateInstance(frmModel)
+    if (check) {
+        myModal.show()
+        console.log(document.body)
+        const maElm = document.getElementById('productUpdateId')
+        const tenElm = document.getElementById('productUpdatetName')
+        const giaElm = document.getElementById('productUpdatePrice')
+        const soluongElm = document.getElementById('productUpdateStock')
+        const danhMucElm = document.getElementById('productUpdateCategory');
+        const anhSPElm = document.getElementById('productUpdateImage');
+        // validate
+        const products = initProduct();
+        console.log('maElm', maElm)
+        console.log("ma", ma)
+
+        const productUpdate = products.find(product => product.maSanPham === ma)
+        if (productUpdate == undefined) {
+            alert(`ma sp ko ton tai`)
+            return
+        }
+        console.log(productUpdate)
+        maElm.value = productUpdate.maSanPham
+        maElm.readOnly = true;
+        tenElm.value = productUpdate.tenSanPham
+        giaElm.value = productUpdate.giaVND
+        soluongElm.value = productUpdate.soLuongTon
+        danhMucElm.value = productUpdate.danhMuc
+        anhSPElm.value = productUpdate.hinhAnh
+
+
+
+        //   setTimeout(() => {
+        //     myModal.hide()
+        //   },1000)
+
+        // load lai giao dien
+        // hienthi()
     }
 }
 
@@ -183,7 +229,7 @@ function hienthi() {
                                     <td>${product.danhMuc}</td>
                                       <td>
                                        <button onClick="handleXoa('${product.maSanPham}')" id="btnXóa" type="button" class="btn btn-danger">Xóa</button>
-                                         <button onClick="" id="btnXóa" type="button" class="btn btn-info">Sửa</button>
+                                         <button  onClick="handleEdit('${product.maSanPham}')"type="button" class="btn btn-info">Sửa</button>
                                       </td>
                                 </tr>
     
@@ -219,14 +265,51 @@ btnSave.addEventListener('click', () => {
     products.push({
         "maSanPham": ma,
         "tenSanPham": ten,
-        "giaVND":  parseInt(gia),
+        "giaVND": parseInt(gia),
         "soLuongTon": parseInt(soluong),
-        "danhMuc":  danhMuc,
+        "danhMuc": danhMuc,
         "hinhAnh": anhSP
     }) // them moi
     //lu xong storage => xai lan sau
     localStorage.setItem('products', JSON.stringify(products))
     alert("them thanh cong")
+    // load lai giao dien
+    hienthi()
+    return
+})
+
+const btnUpdate = document.getElementById('btnUpdate')
+btnUpdate.addEventListener('click', () => {
+    const ma = document.getElementById('productUpdateId').value;
+    const ten = document.getElementById('productUpdatetName').value;
+    const gia = document.getElementById('productUpdatePrice').value;
+    const soluong = document.getElementById('productUpdateStock').value;
+    const danhMuc = document.getElementById('productUpdateCategory').value;
+    const anhSP = document.getElementById('productUpdateImage').value;
+    // validate
+    if (ma === "" || ten === "" || gia === "" || soluong == "" || danhMuc == "") {
+        return
+    }
+    // check trung
+    const products = initProduct();
+    console.log("ma", ma)
+    const currenProduct = products.find(product => product.maSanPham === ma)
+    if (currenProduct != undefined) {
+        const viTri = products.findIndex(product => product.maSanPham === ma)
+        if (viTri != -1) {
+            products[viTri] = {
+                "maSanPham": ma,
+                "tenSanPham": ten,
+                "giaVND": parseInt(gia),
+                "soLuongTon": parseInt(soluong),
+                "danhMuc": danhMuc,
+                "hinhAnh": anhSP
+            }
+        }
+    }
+
+    localStorage.setItem('products', JSON.stringify(products))
+    alert("Cap nhat thanh cong")
     // load lai giao dien
     hienthi()
     return
