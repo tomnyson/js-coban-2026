@@ -129,7 +129,18 @@ logoutbtn.addEventListener('click', () => {
 })
 
 
-
+function handleXoa (ma) {
+    const check  = confirm(`bạn chắc xóa product id ${ma} không  ?`)
+    if(check) {
+        const products = initProduct();
+        const deletedProducts = products.filter(product => product.maSanPham !== ma)
+        console.log(deletedProducts)
+         localStorage.setItem('products', JSON.stringify(deletedProducts))
+         alert("xóa thanh cong")
+    // load lai giao dien
+        hienthi()
+    }
+}
 
 
 /**
@@ -170,7 +181,10 @@ function hienthi() {
                                     <td>${product.giaVND}</td>
                                     <td>${product.soLuongTon}</td>
                                     <td>${product.danhMuc}</td>
-
+                                      <td>
+                                       <button onClick="handleXoa('${product.maSanPham}')" id="btnXóa" type="button" class="btn btn-danger">Xóa</button>
+                                         <button onClick="" id="btnXóa" type="button" class="btn btn-info">Sửa</button>
+                                      </td>
                                 </tr>
     
     `
@@ -178,3 +192,42 @@ function hienthi() {
     tbody.innerHTML = html
 }
 
+// chuc nang luu san pham
+
+const btnSave = document.getElementById('btnSave')
+
+btnSave.addEventListener('click', () => {
+    const ma = document.getElementById('productId').value;
+    const ten = document.getElementById('productName').value;
+    const gia = document.getElementById('productPrice').value;
+    const soluong = document.getElementById('productStock').value;
+    const danhMuc = document.getElementById('productCategory').value;
+    const anhSP = document.getElementById('productImage').value;
+    // validate
+    if (ma === "" || ten === "" || gia === "" || soluong == "" || danhMuc == "") {
+        return
+    }
+    // check trung
+    const products = initProduct();
+    console.log("ma", ma)
+    const checktrung = products.find(product => product.maSanPham === ma)
+    if (checktrung != undefined) {
+        alert("ma da ton tai")
+        //mode => update
+        return
+    }
+    products.push({
+        "maSanPham": ma,
+        "tenSanPham": ten,
+        "giaVND":  parseInt(gia),
+        "soLuongTon": parseInt(soluong),
+        "danhMuc":  danhMuc,
+        "hinhAnh": anhSP
+    }) // them moi
+    //lu xong storage => xai lan sau
+    localStorage.setItem('products', JSON.stringify(products))
+    alert("them thanh cong")
+    // load lai giao dien
+    hienthi()
+    return
+})

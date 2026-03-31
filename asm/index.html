@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .hero-img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; }
+        .product-img { width: 100%; height: 220px; object-fit: cover; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Phone Store</a>
+        <div class="navbar-nav ms-auto d-flex flex-row gap-3">
+            <a class="nav-link active" href="index.html">Trang chủ</a>
+            <a class="nav-link" href="products.html">Sản phẩm</a>
+            <a class="nav-link" href="product-detail.html">Chi tiết</a>
+            <a class="nav-link" href="login.html">Đăng nhập</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mb-5">
+    <div class="row g-4 align-items-stretch">
+        <div class="col-lg-7">
+            <div class="card shadow-sm h-100">
+                <div class="card-body p-4">
+                    <span class="badge bg-warning text-dark mb-3">Bộ sưu tập mới</span>
+                    <h1 class="display-5 fw-bold mb-3">Trang chủ website bán điện thoại đơn giản</h1>
+                    <p class="text-muted mb-4">
+                        Chào mừng đến với cửa hàng điện thoại. Tại đây bạn có thể xem các mẫu điện thoại mới,
+                        giá bán nổi bật và thông tin chi tiết của từng sản phẩm.
+                    </p>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="products.html" class="btn btn-primary">Xem sản phẩm</a>
+                        <a href="product-detail.html" class="btn btn-outline-secondary">Sản phẩm nổi bật</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card shadow-sm h-100 overflow-hidden">
+                <img
+                    src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
+                    alt="Dien thoai"
+                    class="hero-img"
+                >
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row mb-3">
+        <div class="col">
+            <h3>Sản phẩm nổi bật</h3>
+            <p class="text-muted mb-0">Một số sản phẩm tiêu biểu đang được quan tâm.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1612198527160-0ffb5efb7c67?auto=format&fit=crop&w=800&q=80" alt="iPhone 15 Pro Max" class="product-img">
+                <div class="card-body">
+                    <h5 class="card-title">iPhone 15 Pro Max</h5>
+                    <p class="card-text text-muted">Mẫu điện thoại cao cấp với hiệu năng mạnh và camera đẹp.</p>
+                    <p class="text-danger fw-bold mb-3">29.990.000 đ</p>
+                    <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=80" alt="Samsung Galaxy" class="product-img">
+                <div class="card-body">
+                    <h5 class="card-title">Samsung Galaxy S24 Ultra</h5>
+                    <p class="card-text text-muted">Thiết kế sang trọng, màn hình lớn và pin sử dụng bền bỉ.</p>
+                    <p class="text-danger fw-bold mb-3">26.490.000 đ</p>
+                    <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=800&q=80" alt="Xiaomi" class="product-img">
+                <div class="card-body">
+                    <h5 class="card-title">Xiaomi 14T Pro</h5>
+                    <p class="card-text text-muted">Hiệu năng tốt, sạc nhanh và mức giá phù hợp học sinh sinh viên.</p>
+                    <p class="text-danger fw-bold mb-3">15.990.000 đ</p>
+                    <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1567581935884-3349723552ca?auto=format&fit=crop&w=800&q=80" alt="OPPO" class="product-img">
+                <div class="card-body">
+                    <h5 class="card-title">OPPO Reno12</h5>
+                    <p class="card-text text-muted">Thiết kế trẻ trung, camera đẹp và phù hợp nhu cầu hằng ngày.</p>
+                    <p class="text-danger fw-bold mb-3">10.490.000 đ</p>
+                    <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5>Hàng chính hãng</h5>
+                    <p class="text-muted mb-0">Cam kết sản phẩm mới, đầy đủ phụ kiện và bảo hành rõ ràng.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5>Giao hàng nhanh</h5>
+                    <p class="text-muted mb-0">Hỗ trợ giao hàng nhanh và kiểm tra sản phẩm khi nhận.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5>Hỗ trợ trả góp</h5>
+                    <p class="text-muted mb-0">Tư vấn mua trả góp đơn giản, phù hợp nhiều nhu cầu tài chính.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

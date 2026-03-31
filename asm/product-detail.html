@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .product-img { width: 100%; height: 420px; object-fit: cover; }
+        .thumb-img { width: 100%; height: 120px; object-fit: cover; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Phone Store</a>
+        <div class="navbar-nav ms-auto d-flex flex-row gap-3">
+            <a class="nav-link" href="index.html">Trang chủ</a>
+            <a class="nav-link" href="products.html">Sản phẩm</a>
+            <a class="nav-link active" href="product-detail.html">Chi tiết</a>
+            <a class="nav-link" href="login.html">Đăng nhập</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container mb-5">
+    <div class="row g-4">
+        <div class="col-lg-7">
+            <div class="card shadow-sm mb-3">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80" alt="iPhone 15 Pro Max" class="product-img">
+            </div>
+            <div class="row g-3">
+                <div class="col-4">
+                    <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=600&q=80" alt="Hinh 1" class="thumb-img rounded shadow-sm">
+                </div>
+                <div class="col-4">
+                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80" alt="Hinh 2" class="thumb-img rounded shadow-sm">
+                </div>
+                <div class="col-4">
+                    <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=600&q=80" alt="Hinh 3" class="thumb-img rounded shadow-sm">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="card shadow-sm h-100">
+                <div class="card-body p-4">
+                    <span class="badge bg-success mb-3">Còn hàng</span>
+                    <h2 class="mb-3">iPhone 15 Pro Max</h2>
+                    <p class="text-muted">
+                        Điện thoại cao cấp của Apple với thiết kế sang trọng, màn hình đẹp,
+                        hiệu năng mạnh và hệ thống camera chất lượng cao.
+                    </p>
+                    <h4 class="text-danger fw-bold mb-3">29.990.000 đ</h4>
+
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item"><strong>Mã sản phẩm:</strong> IP15PM</li>
+                        <li class="list-group-item"><strong>Màn hình:</strong> 6.7 inch OLED</li>
+                        <li class="list-group-item"><strong>Bộ nhớ:</strong> 256GB</li>
+                        <li class="list-group-item"><strong>Danh mục:</strong> iPhone</li>
+                    </ul>
+
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="register.html" class="btn btn-primary">Mua ngay</a>
+                        <a href="products.html" class="btn btn-outline-secondary">Quay lại</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-white">
+            <h5 class="mb-0">Mô tả sản phẩm</h5>
+        </div>
+        <div class="card-body">
+            <p class="mb-3">
+                iPhone 15 Pro Max là sản phẩm nổi bật dành cho người dùng cần một thiết bị mạnh,
+                camera tốt và thời lượng pin ổn định cho công việc lẫn giải trí.
+            </p>
+            <p class="mb-0">
+                Máy phù hợp với nhu cầu chụp ảnh, quay video, chơi game và sử dụng lâu dài.
+                Đây là mẫu điện thoại cao cấp nổi bật tại cửa hàng hiện tại.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0">Sản phẩm liên quan</h4>
+        <a href="products.html" class="btn btn-outline-primary btn-sm">Xem tất cả</a>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=80" alt="Samsung" class="thumb-img">
+                <div class="card-body">
+                    <h5 class="card-title">Samsung Galaxy S24 Ultra</h5>
+                    <p class="card-text text-muted">Mẫu điện thoại flagship với màn hình lớn và hiệu năng cao.</p>
+                    <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=800&q=80" alt="Xiaomi" class="thumb-img">
+                <div class="card-body">
+                    <h5 class="card-title">Xiaomi 14T Pro</h5>
+                    <p class="card-text text-muted">Hiệu năng mạnh, sạc nhanh và giá bán hợp lý.</p>
+                    <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1567581935884-3349723552ca?auto=format&fit=crop&w=800&q=80" alt="OPPO" class="thumb-img">
+                <div class="card-body">
+                    <h5 class="card-title">OPPO Reno12</h5>
+                    <p class="card-text text-muted">Thiết kế trẻ trung, phù hợp nhu cầu chụp ảnh và sử dụng hằng ngày.</p>
+                    <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

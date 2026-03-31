@@ -32,8 +32,7 @@
                     <h5 class="mb-0">Thêm / Cập nhật Sản phẩm</h5>
                 </div>
                 <div class="card-body">
-                    <form action="#" method="POST">
-                        <input type="hidden" id="productId" value="4">
+                    <form id="frmProduct" action="#" method="POST">
                           <div class="mb-3">
                             <label for="productName" class="form-label">mã sản phẩm</label>
                             <input type="text" class="form-control" id="productId" placeholder="nhập mã SP" required>
@@ -72,7 +71,7 @@
 
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <button type="reset" class="btn btn-secondary">Làm mới</button>
-                            <button type="submit" class="btn btn-primary">Lưu sản phẩm</button>
+                            <button id="btnSave" type="button" class="btn btn-primary">Lưu sản phẩm</button>
                         </div>
                     </form>
                 </div>
