@@ -135,8 +135,8 @@ btnDangNhap.addEventListener('click', function () {
     alert("mk phai lon hon 8 ky tu")
     return false
   }
-  const loginUser = login(email,pass)
-  if(loginUser) {
+  const loginUser = login(email, pass)
+  if (loginUser) {
     localStorage.setItem('user', JSON.stringify(loginUser))
     location.href = 'product.html'
     alert('dn thanh cong')
