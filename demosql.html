@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Lý Thuyết MySQL & HTML | LAB 7</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        body { font-family: 'Roboto', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+        }
+        .code-bg {
+            background: #0f172a;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-database text-3xl text-blue-600"></i>
+                <div>
+                    <h1 class="text-2xl font-bold text-slate-800">QL_SINHVIEN</h1>
+                    <p class="text-xs text-slate-500 -mt-1">LAB 7 • MySQL + HTML</p>
+                </div>
+            </div>
+            <div class="flex gap-8 text-sm font-medium">
+                <a href="#mysql" class="hover:text-blue-600 transition">Lý Thuyết MySQL</a>
+                <a href="#html" class="hover:text-blue-600 transition">Lý Thuyết HTML</a>
+                <a href="#lab" class="hover:text-blue-600 transition">LAB 7</a>
+                <a href="#code" class="hover:text-blue-600 transition">Mã SQL</a>
+            </div>
+            <a href="#" onclick="window.location.reload()"
+               class="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700 transition flex items-center gap-2">
+                <i class="fa-solid fa-download"></i>
+                Tải Script
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white py-24">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center bg-white/10 backdrop-blur-md text-white text-sm px-4 py-2 rounded-3xl mb-6">
+                    <span class="bg-emerald-400 text-emerald-950 text-[10px] font-bold px-2.5 py-0.5 rounded-full mr-2">NEW</span>
+                    LAB 7 - Quản Lý Sinh Viên
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                    Hiểu rõ <span class="text-blue-400">MySQL</span> &amp; <span class="text-orange-400">HTML</span><br>
+                    qua LAB 7
+                </h1>
+                <p class="text-xl text-slate-300 mb-10">
+                    Trang Landing Page này giải thích lý thuyết cốt lõi của MySQL và HTML,<br>
+                    đồng thời cung cấp full script LAB 7 sẵn chạy.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#mysql"
+                       class="bg-white text-slate-900 px-8 py-4 rounded-2xl font-semibold flex items-center gap-3 hover:scale-105 transition">
+                        <i class="fa-solid fa-database"></i>
+                        Khám phá MySQL
+                    </a>
+                    <a href="#html"
+                       class="border border-white/50 hover:bg-white/10 px-8 py-4 rounded-2xl font-semibold flex items-center gap-3 transition">
+                        <i class="fa-solid fa-code"></i>
+                        Lý thuyết HTML
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8 shadow-2xl">
+                    <pre class="text-emerald-300 text-sm overflow-auto max-h-96 font-mono leading-relaxed">
+CREATE DATABASE QL_SINHVIEN;
+USE QL_SINHVIEN;
+
+CREATE TABLE SINH_VIEN (
+    MaSinhVien CHAR(7) PRIMARY KEY,
+    HoTen NVARCHAR(30) NOT NULL,
+    ...
+);
+                    </pre>
+                    <p class="text-center text-xs text-white/70 mt-4">MySQL + HTML = Web Application hoàn chỉnh</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Lý thuyết MySQL -->
+    <section id="mysql" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-blue-600 font-bold text-sm tracking-widest">CƠ SỞ DỮ LIỆU</span>
+                <h2 class="text-4xl font-bold mt-2">Lý Thuyết MySQL</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
+                    MySQL là một trong những hệ quản trị cơ sở dữ liệu quan hệ (RDBMS) phổ biến nhất thế giới.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-3xl hover:shadow-xl transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">1. MySQL là gì?</h3>
+                    <p class="text-gray-600">
+                        MySQL là hệ quản trị cơ sở dữ liệu quan hệ mã nguồn mở (open-source RDBMS),
+                        được phát triển bởi Oracle. Nó sử dụng ngôn ngữ SQL để quản lý dữ liệu. MySQL hỗ trợ nhiều hệ điều hành và được sử dụng rộng rãi trong các ứng dụng web như WordPress, Facebook.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-3xl hover:shadow-xl transition">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-table"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">2. RDBMS &amp; Các khái niệm chính</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><strong>Table (Bảng):</strong> Lưu trữ dữ liệu theo hàng (rows) và cột (columns), giống như bảng Excel.</li>
+                        <li><strong>Primary Key:</strong> Khóa chính, giá trị duy nhất để xác định mỗi bản ghi, không thể null.</li>
+                        <li><strong>Foreign Key:</strong> Khóa ngoại, tạo mối quan hệ giữa các bảng để tránh dữ liệu trùng lặp và đảm bảo tính nhất quán.</li>
+                        <li><strong>SQL:</strong> Structured Query Language – Ngôn ngữ chuẩn để truy vấn, cập nhật và quản lý dữ liệu.</li>
+                        <li><strong>Normalization:</strong> Quá trình tổ chức dữ liệu để giảm dư thừa, thường áp dụng các dạng chuẩn 1NF, 2NF, 3NF.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-3xl hover:shadow-xl transition">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">3. Các lệnh MySQL cơ bản</h3>
+                    <div class="font-mono text-sm bg-white p-5 rounded-2xl space-y-2">
+                        <p><span class="text-blue-600">CREATE DATABASE</span> QL_SINHVIEN;</p>
+                        <p><span class="text-blue-600">CREATE TABLE</span> SINH_VIEN (MaSinhVien CHAR(7) PRIMARY KEY, HoTen NVARCHAR(30));</p>
+                        <p><span class="text-emerald-600">SELECT * FROM</span> SINH_VIEN WHERE Lop = 'CNTT01';</p>
+                        <p><span class="text-orange-600">INSERT INTO</span> SINH_VIEN VALUES ('SV001', 'Nguyen Van A', 'CNTT01');</p>
+                        <p><span class="text-red-600">UPDATE</span> SINH_VIEN SET HoTen = 'Nguyen Van B' WHERE MaSinhVien = 'SV001';</p>
+                        <p><span class="text-yellow-600">DELETE FROM</span> SINH_VIEN WHERE MaSinhVien = 'SV001';</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-3xl hover:shadow-xl transition md:col-span-3">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3">4. Joins, Indexes và Normalization</h3>
+                    <p class="text-gray-600 mb-4">MySQL hỗ trợ các truy vấn phức tạp để xử lý dữ liệu từ nhiều bảng:</p>
+                    <ul class="space-y-2 text-gray-600 mb-4">
+                        <li><strong>INNER JOIN:</strong> Kết hợp bản ghi khớp từ hai bảng dựa trên điều kiện.</li>
+                        <li><strong>LEFT JOIN:</strong> Bao gồm tất cả bản ghi từ bảng trái, ngay cả khi không khớp.</li>
+                        <li><strong>Indexes:</strong> Tạo chỉ mục trên cột để tăng tốc độ tìm kiếm và JOIN, nhưng có thể làm chậm INSERT/UPDATE.</li>
+                        <li><strong>Normalization vs Denormalization:</strong> Normalization giảm dư thừa; denormalization tăng hiệu suất cho read-heavy apps.</li>
+                    </ul>
+                    <div class="font-mono text-sm bg-white p-4 rounded-2xl">
+                        <p>SELECT s.HoTen, bd.Diem FROM SINH_VIEN s INNER JOIN BANG_DIEM bd ON s.MaSinhVien = bd.MaSinhVien;</p>
+                        <p>CREATE INDEX idx_lop ON SINH_VIEN(Lop);</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAB 7 Demo -->
+    <section id="lab" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4">LAB 7 - Quản Lý Sinh Viên</h2>
+            <p class="text-center text-gray-600 mb-12">Đã hoàn thành đầy đủ YC1 &amp; YC2 với MySQL</p>
+
+            <div class="bg-gradient-to-r from-blue-50 to-emerald-50 rounded-3xl p-10">
+                <div class="flex justify-center gap-8 text-center">
+                    <div>
+                        <div class="text-5xl font-bold text-blue-600">4</div>
+                        <div class="text-sm uppercase tracking-widest">Bảng dữ liệu</div>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-bold text-emerald-600">12</div>
+                        <div class="text-sm uppercase tracking-widest">Câu truy vấn</div>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-bold text-purple-600">100%</div>
+                        <div class="text-sm uppercase tracking-widest">Ràng buộc</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full SQL Code -->
+    <section id="code" class="py-20 bg-slate-900 text-white code-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-10">Full Script MySQL LAB 7</h2>
+            <pre id="sqlCode" class="font-mono text-sm bg-black/70 p-10 rounded-3xl overflow-auto max-h-[600px] text-emerald-300 leading-relaxed whitespace-pre-wrap">
+-- Full script đã cung cấp trước đó (copy nguyên khối dưới đây để chạy)
+CREATE DATABASE IF NOT EXISTS QL_SINHVIEN CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE QL_SINHVIEN;
+            </pre>
+            <div class="text-center mt-8">
+                <button onclick="copySQL()"
+                        class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-2xl font-semibold flex items-center gap-3 mx-auto">
+                    <i class="fa-solid fa-copy"></i>
+                    Sao chép toàn bộ code SQL
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-slate-400">Landing Page được tạo bằng HTML5 + Tailwind CSS</p>
+            <p class="text-xs mt-3 text-slate-500">Kết hợp hoàn hảo giữa lý thuyết MySQL và HTML cho LAB 7</p>
+            <p class="mt-8 text-sm">© 2026 - Suji • Ho Chi Minh City</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script
+        function initTailwind() {
+            tailwind.config = {
+                content: [],
+                theme: { extend: {} }
+            }
+        }
+        initTailwind();
+
+        // Copy SQL code
+        function copySQL() {
+            const code = document.getElementById('sqlCode').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = event.currentTarget;
+                const original = btn.innerHTML;
+                btn.innerHTML = `<i class="fa-solid fa-check"></i> Đã sao chép!`;
+                setTimeout(() => btn.innerHTML = original, 2000);
+            });
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

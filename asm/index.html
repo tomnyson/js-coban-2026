@@ -15,11 +15,14 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Phone Store</a>
-        <div class="navbar-nav ms-auto d-flex flex-row gap-3">
+        <a class="navbar-brand" href="index.html">Tech Store</a>
+        <div class="navbar-nav ms-auto d-flex flex-row gap-3 flex-wrap">
             <a class="nav-link active" href="index.html">Trang chủ</a>
             <a class="nav-link" href="products.html">Sản phẩm</a>
-            <a class="nav-link" href="product-detail.html">Chi tiết</a>
+            <a class="nav-link" href="cart.html">
+                Giỏ hàng <span class="badge text-bg-light ms-1" data-cart-count>0</span>
+            </a>
+            <a class="nav-link" href="checkout.html">Thanh toán</a>
             <a class="nav-link" href="login.html">Đăng nhập</a>
         </div>
     </div>
@@ -31,14 +34,14 @@
             <div class="card shadow-sm h-100">
                 <div class="card-body p-4">
                     <span class="badge bg-warning text-dark mb-3">Bộ sưu tập mới</span>
-                    <h1 class="display-5 fw-bold mb-3">Trang chủ website bán điện thoại đơn giản</h1>
+                    <h1 class="display-5 fw-bold mb-3">Cửa hàng công nghệ với luồng mua hàng hoàn chỉnh</h1>
                     <p class="text-muted mb-4">
-                        Chào mừng đến với cửa hàng điện thoại. Tại đây bạn có thể xem các mẫu điện thoại mới,
-                        giá bán nổi bật và thông tin chi tiết của từng sản phẩm.
+                        Khám phá laptop, màn hình và phụ kiện nổi bật, thêm nhanh vào giỏ hàng
+                        rồi tiến hành thanh toán ngay trên cùng hệ thống.
                     </p>
                     <div class="d-flex gap-2 flex-wrap">
                         <a href="products.html" class="btn btn-primary">Xem sản phẩm</a>
-                        <a href="product-detail.html" class="btn btn-outline-secondary">Sản phẩm nổi bật</a>
+                        <a href="cart.html" class="btn btn-outline-secondary">Mở giỏ hàng</a>
                     </div>
                 </div>
             </div>
@@ -46,8 +49,8 @@
         <div class="col-lg-5">
             <div class="card shadow-sm h-100 overflow-hidden">
                 <img
-                    src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
-                    alt="Dien thoai"
+                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
+                    alt="Khong gian cong nghe"
                     class="hero-img"
                 >
             </div>
@@ -59,13 +62,11 @@
     <div class="row mb-3">
         <div class="col">
             <h3>Sản phẩm nổi bật</h3>
-            <p class="text-muted mb-0">Một số sản phẩm tiêu biểu đang được quan tâm.</p>
+            <p class="text-muted mb-0">Một vài lựa chọn đang được khách hàng quan tâm nhiều nhất tuần này.</p>
         </div>
     </div>
 
-    <div class="row g-4" id="productHome">
-     
-    </div>
+    <div class="row g-4" id="productHome"></div>
 </div>
 
 <div class="container mb-5">
@@ -73,29 +74,29 @@
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
                 <div class="card-body">
-                    <h5>Hàng chính hãng</h5>
-                    <p class="text-muted mb-0">Cam kết sản phẩm mới, đầy đủ phụ kiện và bảo hành rõ ràng.</p>
+                    <h5>Kho hàng rõ ràng</h5>
+                    <p class="text-muted mb-0">Hiển thị tồn kho thực tế để bạn chủ động chọn mua nhanh hơn.</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
                 <div class="card-body">
-                    <h5>Giao hàng nhanh</h5>
-                    <p class="text-muted mb-0">Hỗ trợ giao hàng nhanh và kiểm tra sản phẩm khi nhận.</p>
+                    <h5>Giỏ hàng linh hoạt</h5>
+                    <p class="text-muted mb-0">Thêm, tăng giảm số lượng và theo dõi tổng tiền ngay trên giao diện.</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card shadow-sm h-100">
                 <div class="card-body">
-                    <h5>Hỗ trợ trả góp</h5>
-                    <p class="text-muted mb-0">Tư vấn mua trả góp đơn giản, phù hợp nhiều nhu cầu tài chính.</p>
+                    <h5>Thanh toán nhanh</h5>
+                    <p class="text-muted mb-0">Điền thông tin giao hàng, chọn phương thức thanh toán và lưu đơn ngay.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <script src="./scripts/web.js"></script>
+<script src="./scripts/web.js"></script>
 </body>
 </html>
