@@ -19,6 +19,15 @@ function intData() {
   }
 }
 
+function initCart() {
+  const carts = localStorage.getItem('carts')
+  if (carts) {
+    return JSON.parse(carts)
+  } else {
+    localStorage.setItem('carts', JSON.stringify([]))
+    return []
+  }
+}
 
 function loadProduct() {
   // lay ds san pham hien tai
@@ -31,6 +40,21 @@ function loadProduct() {
 
 window.addEventListener('load', () => {
   //show product duct o trang chu
+  const path = window.location.pathname 
+  if(path.includes('index')) {
+        alert('go home')
+  } else if(path.includes('cart')) {
+    /**
+     * lay cart tu localstorage
+     *  show len table 
+     * -> handle event xoa gio hang
+     */
+
+  }else if(path.includes('product-detail')) {
+
+  }else if(path.includes('product-detail')) {
+
+  }
   const params = new URLSearchParams(window.location.search);
   const productList = loadProduct()
   const ma = params.get('id');
@@ -40,13 +64,13 @@ window.addEventListener('load', () => {
     const current = productList.find(product => product.maSanPham === ma)
     if (current == undefined) {
       location.href = 'error.html'
-    } 
-
+    }
     showProductDetail(current)
-
   } else {
 
     showProduct(productList)
+    // handle add cart
+    handleCart()
   }
 
 })
@@ -64,6 +88,7 @@ function showProduct(productList, number = 8) {
                     <p class="card-text text-muted">${product.tenSanPham}</p>
                     <p class="text-danger fw-bold mb-3">${product.giaVND}</p>
                     <a href="product-detail.html?id=${product.maSanPham}" class="btn btn-outline-primary btn-sm">Xem chi tiết</a>
+                    <button type="button" data-id=${product.maSanPham} class="btn btn-success btn-sm btn-add-cart">Thêm vào giỏ hàng</button>
                 </div>
             </div>
         </div>
@@ -76,8 +101,43 @@ function showProduct(productList, number = 8) {
 function showProductDetail(product) {
   console.log(product)
   const temSPElm = document.getElementById(`tenSanPham`)
-  temSPElm.textContent= product.tenSanPham
+  temSPElm.textContent = product.tenSanPham
   document.getElementById(`gia`).innerText = product.gia
 
 
 }
+
+function handleCart() {
+  const btnAddCart = document.querySelectorAll('.btn-add-cart')
+  for (const btn of btnAddCart) {
+    btn.addEventListener('click', (e) => {
+       const maSanPham = e.currentTarget.dataset.id; 
+       const products = loadProduct()
+       const sanppham = products.find(product => product.maSanPham === maSanPham )
+       if(sanppham !== null) {
+          // kien tra xem da co trong gio hang chua => findIndex
+          // co => lam gi? => cap nhat lai so luong (soluong hien tai + 1) => luu lai storage
+          // ko co thi lam gi => them vao gio hang hien tai  ? 
+          // luu lai gio hang sau khi da chinh sua
+          alert (`neu cssp thi +sl`)
+          const carts= initCart()
+          const vitri= carts.findIndex(product=>product.maSanPham===maSanPham)
+          if(vitri== -1)
+            {
+            sanppham.soluong= 1
+            carts.push(sanppham)
+            
+          }else{
+            carts[vitri].soluong += 1
+          }
+        localStorage.setItem("carts",JSON.stringify(carts))
+       alert ('san phan da luu');
+       }else {
+
+        alert('ma sp khong ton tai')
+       }
+       
+    })
+  }
+}
+
