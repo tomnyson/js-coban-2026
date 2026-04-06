@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết bài viết</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background:
+                radial-gradient(circle at top right, rgba(13, 110, 253, 0.12), transparent 28%),
+                #f8f9fa;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #0f172a, #1d4ed8);
+            color: #fff;
+        }
+        .article-card,
+        .info-card,
+        .related-card {
+            border: 0;
+            border-radius: 1.25rem;
+            box-shadow: 0 1rem 2rem rgba(15, 23, 42, 0.08);
+        }
+        .hero-image,
+        .related-image {
+            width: 100%;
+            object-fit: cover;
+        }
+        .hero-image {
+            height: 100%;
+            min-height: 320px;
+        }
+        .related-image {
+            height: 180px;
+        }
+        .article-content p,
+        .article-content li {
+            color: #4b5563;
+            line-height: 1.8;
+        }
+        .article-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .quote-box {
+            border-left: 4px solid #0d6efd;
+            background: #eff6ff;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+    <div class="container">
+        <a class="navbar-brand fw-semibold" href="index.html">Tech Store</a>
+        <div class="navbar-nav ms-auto d-flex flex-row gap-3 flex-wrap">
+            <a class="nav-link" href="index.html">Trang chủ</a>
+            <a class="nav-link" href="products.html">Sản phẩm</a>
+            <a class="nav-link active" aria-current="page" href="post-detail.html">Chi tiết bài viết</a>
+            <a class="nav-link" href="posts.html">Bài viết</a>
+            <a class="nav-link" href="create-post.html">Viết bài</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero-section py-5">
+    <div class="container py-lg-4">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-7">
+                <nav aria-label="breadcrumb" class="mb-3">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="index.html" class="link-light text-decoration-none">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="posts.html" class="link-light text-decoration-none">Bài viết</a></li>
+                        <li class="breadcrumb-item active text-white-50" aria-current="page">Chi tiết</li>
+                    </ol>
+                </nav>
+                <span class="badge rounded-pill bg-light text-primary mb-3 px-3 py-2">Laptop</span>
+                <h1 class="display-5 fw-bold mb-3">5 mẫu laptop học tập đáng cân nhắc cho sinh viên năm 2026</h1>
+                <p class="lead text-white-50 mb-4">
+                    Gợi ý những lựa chọn cân bằng giữa hiệu năng, pin, độ bền và mức giá để
+                    sinh viên có thể dùng tốt trong suốt một kỳ học dài.
+                </p>
+                <div class="d-flex gap-3 flex-wrap text-white-50">
+                    <span>Tác giả: Minh Anh</span>
+                    <span>06/04/2026</span>
+                    <span>8 phút đọc</span>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="article-card overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+                        alt="Laptop hoc tap cho sinh vien"
+                        class="hero-image"
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="container py-5">
+    <div class="row g-4 align-items-start">
+        <div class="col-lg-8">
+            <article class="card article-card">
+                <div class="card-body p-4 p-lg-5 article-content">
+                    <p class="fs-5 text-dark">
+                        Với sinh viên, một chiếc laptop tốt không chỉ cần chạy mượt mà mà còn phải
+                        đủ bền, pin đủ lâu và mức giá hợp lý. Khi chọn mua, nên ưu tiên những mẫu máy
+                        có cấu hình vừa đủ trong 3 đến 4 năm sử dụng thay vì chạy theo thông số quá cao.
+                    </p>
+
+                    <h2>1. Ưu tiên bộ xử lý phù hợp nhu cầu học tập</h2>
+                    <p>
+                        Nếu chủ yếu học văn phòng, trình chiếu, học online và làm báo cáo, các dòng chip
+                        tiết kiệm điện là đủ dùng. Với nhóm ngành thiết kế, kỹ thuật hoặc lập trình,
+                        bạn nên chọn cấu hình có RAM từ 16GB và SSD từ 512GB để thao tác thoải mái hơn.
+                    </p>
+
+                    <h2>2. Đừng bỏ qua chất lượng màn hình và bàn phím</h2>
+                    <p>
+                        Sinh viên thường dùng máy liên tục nhiều giờ, vì vậy màn hình sáng tốt và bàn phím
+                        dễ gõ sẽ ảnh hưởng trực tiếp đến trải nghiệm học tập. Những mẫu máy có bàn phím hành trình tốt,
+                        màn hình Full HD IPS và lớp phủ chống chói thường là lựa chọn an toàn.
+                    </p>
+
+                    <div class="quote-box rounded-4 p-4 my-4">
+                        <p class="mb-0">
+                            Mẹo nhanh: nếu phải mang laptop đi học mỗi ngày, hãy ưu tiên máy dưới 1.6kg
+                            và sạc gọn để giảm đáng kể cảm giác nặng balo.
+                        </p>
+                    </div>
+
+                    <h2>3. Pin và độ bền quyết định giá trị sử dụng lâu dài</h2>
+                    <p>
+                        Một chiếc laptop có pin tốt giúp sinh viên chủ động hơn khi học ở thư viện,
+                        quán cà phê hoặc phòng học nhóm. Ngoài ra, khung máy chắc chắn và bản lề ổn định
+                        sẽ giúp thiết bị giữ trạng thái tốt sau nhiều lần di chuyển.
+                    </p>
+
+                    <h2>4. 5 lựa chọn đáng cân nhắc</h2>
+                    <ul>
+                        <li>ASUS Vivobook: cân bằng tốt giữa giá và hiệu năng cho nhu cầu phổ thông.</li>
+                        <li>Acer Aspire: phù hợp sinh viên cần màn hình lớn, làm việc đa nhiệm.</li>
+                        <li>HP Pavilion: thiết kế gọn, độ hoàn thiện khá, dễ dùng lâu dài.</li>
+                        <li>Dell Inspiron: bàn phím tốt, linh kiện ổn định, dễ bảo trì.</li>
+                        <li>MacBook Air: pin lâu, mượt mà, phù hợp người ưu tiên tính cơ động.</li>
+                    </ul>
+
+                    <h2>Kết luận</h2>
+                    <p>
+                        Chiếc laptop phù hợp nhất là máy đáp ứng đúng ngành học, thói quen di chuyển
+                        và ngân sách hiện tại. Trước khi chốt đơn, bạn nên cân đối giữa hiệu năng,
+                        trọng lượng, pin và chế độ bảo hành để chọn được giải pháp bền vững nhất.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card info-card mb-4">
+                <div class="card-body p-4">
+                    <h2 class="h5 mb-3">Thông tin nhanh</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item px-0"><strong>Chuyên mục:</strong> Laptop</li>
+                        <li class="list-group-item px-0"><strong>Từ khóa:</strong> sinh viên, laptop, học tập</li>
+                        <li class="list-group-item px-0"><strong>Trạng thái:</strong> Đã xuất bản</li>
+                        <li class="list-group-item px-0"><strong>Cập nhật:</strong> 06/04/2026</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card info-card mb-4">
+                <div class="card-body p-4">
+                    <h2 class="h5 mb-3">Hành động nhanh</h2>
+                    <div class="d-grid gap-2">
+                        <a href="posts.html" class="btn btn-outline-primary">Quay lại danh sách</a>
+                        <a href="create-post.html" class="btn btn-primary">Tạo bài viết mới</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card info-card">
+                <div class="card-body p-4">
+                    <h2 class="h5 mb-3">Tóm tắt nội dung</h2>
+                    <p class="text-muted mb-0">
+                        Bài viết tập trung vào bốn tiêu chí chính khi chọn laptop cho sinh viên:
+                        cấu hình, màn hình, pin và độ bền. Cuối bài là danh sách gợi ý để người đọc tham khảo nhanh.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="mt-5">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+            <div>
+                <h2 class="h3 mb-1">Bài viết liên quan</h2>
+                <p class="text-muted mb-0">Một vài chủ đề gần với bài đang đọc để người xem tiếp tục theo dõi.</p>
+            </div>
+            <a href="posts.html" class="btn btn-outline-secondary">Xem tất cả bài viết</a>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-xl-4">
+                <article class="card related-card h-100 overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+                        alt="Laptop van phong"
+                        class="related-image"
+                    >
+                    <div class="card-body p-4">
+                        <span class="badge text-bg-warning mb-3">Laptop</span>
+                        <h3 class="h5 mb-3">Cách chọn laptop văn phòng mỏng nhẹ nhưng vẫn đủ mạnh</h3>
+                        <a href="posts.html" class="btn btn-outline-primary btn-sm">Quay về danh sách</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+                <article class="card related-card h-100 overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1545127398-14699f92334b?auto=format&fit=crop&w=900&q=80"
+                        alt="Bo phu kien cho goc lam viec"
+                        class="related-image"
+                    >
+                    <div class="card-body p-4">
+                        <span class="badge text-bg-secondary mb-3">Phụ kiện</span>
+                        <h3 class="h5 mb-3">Checklist chọn combo bàn phím, chuột và tai nghe cho góc làm việc</h3>
+                        <a href="posts.html" class="btn btn-outline-primary btn-sm">Quay về danh sách</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+                <article class="card related-card h-100 overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80"
+                        alt="Dien thoai tam trung"
+                        class="related-image"
+                    >
+                    <div class="card-body p-4">
+                        <span class="badge text-bg-info mb-3">Điện thoại</span>
+                        <h3 class="h5 mb-3">3 tiêu chí quan trọng khi mua điện thoại tầm trung năm nay</h3>
+                        <a href="posts.html" class="btn btn-outline-primary btn-sm">Quay về danh sách</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
