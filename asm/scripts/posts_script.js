@@ -130,9 +130,9 @@ function handleEdit(ma) {
 
 function hienthi() {
     const tbody = document.getElementById(`baiviet`)
-    let danhsachbaiviet = initProduct()
+    let danhsachbaiviet = initPost()
     let html = ''
-    danhsachsanpham.forEach((product, index) => {
+    danhsachbaiviet.forEach((product, index) => {
         html += `
     
      <tr>

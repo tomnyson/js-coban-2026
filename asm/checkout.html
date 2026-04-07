@@ -68,44 +68,10 @@
                             <label for="customerEmail" class="form-label">Email</label>
                             <input type="email" class="form-control" id="customerEmail" name="customerEmail" required>
                         </div>
-                        <div class="col-md-6">
-                            <label for="customerCity" class="form-label">Tỉnh / Thành phố</label>
-                            <input type="text" class="form-control" id="customerCity" name="customerCity" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="customerDistrict" class="form-label">Quận / Huyện</label>
-                            <input type="text" class="form-control" id="customerDistrict" name="customerDistrict" required>
-                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <label for="customerAddress" class="form-label">Địa chỉ chi tiết</label>
                             <input type="text" class="form-control" id="customerAddress" name="customerAddress" required>
                         </div>
-                    </div>
-
-                    <hr class="my-4">
-
-                    <h6 class="mb-3">Hình thức giao hàng</h6>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="radio" name="deliveryMethod" id="deliveryStandard" value="Giao tiêu chuẩn" checked>
-                        <label class="form-check-label" for="deliveryStandard">Giao tiêu chuẩn 2-4 ngày</label>
-                    </div>
-                    <div class="form-check mb-4">
-                        <input class="form-check-input" type="radio" name="deliveryMethod" id="deliveryExpress" value="Giao hoả tốc">
-                        <label class="form-check-label" for="deliveryExpress">Giao hoả tốc trong ngày, nhân viên sẽ xác nhận phí sau</label>
-                    </div>
-
-                    <h6 class="mb-3">Phương thức thanh toán</h6>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="paymentCod" value="Thanh toán khi nhận hàng" checked>
-                        <label class="form-check-label" for="paymentCod">Thanh toán khi nhận hàng</label>
-                    </div>
-                    <div class="form-check mb-2">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="paymentBanking" value="Chuyển khoản ngân hàng">
-                        <label class="form-check-label" for="paymentBanking">Chuyển khoản ngân hàng</label>
-                    </div>
-                    <div class="form-check mb-4">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="paymentCard" value="Thanh toán thẻ">
-                        <label class="form-check-label" for="paymentCard">Thẻ tín dụng / thẻ ghi nợ</label>
                     </div>
 
                     <div class="mb-4">
@@ -148,9 +114,6 @@
                         <span>Tổng thanh toán</span>
                         <strong class="text-danger" id="checkoutTotal">0 đ</strong>
                     </div>
-                </div>
-                <div class="card-footer bg-white text-muted small">
-                    Đơn hàng sẽ được lưu trong <code>localStorage</code> với mã tự sinh để phục vụ demo quy trình thanh toán.
                 </div>
             </div>
         </div>

@@ -40,38 +40,49 @@ function loadProduct() {
 
 window.addEventListener('load', () => {
   //show product duct o trang chu
-  const path = window.location.pathname 
-  if(path.includes('index')) {
-        alert('go home')
-  } else if(path.includes('cart')) {
+  const path = window.location.pathname
+  if (path.includes('index')) {
+    alert('go home')
+  } else if (path.includes('cart')) {
     /**
      * lay cart tu localstorage
      *  show len table 
      * -> handle event xoa gio hang
      */
+    const carts = initCart()
+    console.log('carts', carts)
+    showCarts(carts)
+    return
+  } else if (path.includes('checkout')) {
+    alert('check out here')
+    loadUserCheckoutForm()
+    LoadCartCheckout()
+    /**\
+     * 1. load user profile -> vao dung cac o trong form
+     * 2. load cart len len tuong tu trang cart
+     */
+  } else if (path.includes('product-detail')) {
 
-  }else if(path.includes('product-detail')) {
-
-  }else if(path.includes('product-detail')) {
-
-  }
-  const params = new URLSearchParams(window.location.search);
-  const productList = loadProduct()
-  const ma = params.get('id');
-  console.log('ma', ma)
-  if (ma != null) {
-    // truong hop trang detail
-    const current = productList.find(product => product.maSanPham === ma)
-    if (current == undefined) {
-      location.href = 'error.html'
-    }
-    showProductDetail(current)
   } else {
+    const params = new URLSearchParams(window.location.search);
+    const productList = loadProduct()
+    const ma = params.get('id');
+    console.log('ma', ma)
+    if (ma != null) {
+      // truong hop trang detail
+      const current = productList.find(product => product.maSanPham === ma)
+      if (current == undefined) {
+        location.href = 'error.html'
+      }
+      showProductDetail(current)
+    } else {
 
-    showProduct(productList)
-    // handle add cart
-    handleCart()
+      showProduct(productList)
+      // handle add cart
+      handleCart()
+    }
   }
+
 
 })
 
@@ -98,12 +109,42 @@ function showProduct(productList, number = 8) {
   tbody.innerHTML = html
 }
 
+const formatter = new Intl.NumberFormat('vi-VN', {
+  style: 'currency',
+  currency: 'VND',
+});
+
+function showCarts(carts) {
+  const tbody = document.getElementById(`tableCart`)
+  const totalSum = document.getElementById('summaryTotal')
+  console.log('table', tbody)
+  let html = ''
+  let sum = 0
+  carts.forEach((item, index) => {
+    html += `
+        <tr>
+        <td>${item.tenSanPham}</td>
+         <td>${item.soluong}</td>
+         <td>${item.giaVND}</td>
+         <td>${item.giaVND * item.soluong}</td>
+          <td>
+            <button class="btn btn-danger">X</button>
+          </td>
+        </tr>
+    
+    `
+    sum += item.giaVND * item.soluong
+  });
+  console.log(html)
+  tbody.innerHTML = html
+  totalSum.textContent = formatter.format(sum) || 0
+}
+
 function showProductDetail(product) {
   console.log(product)
   const temSPElm = document.getElementById(`tenSanPham`)
   temSPElm.textContent = product.tenSanPham
-  document.getElementById(`gia`).innerText = product.gia
-
+  document.getElementById(`gia`).innerText = formatter.format(product.gia)
 
 }
 
@@ -111,33 +152,88 @@ function handleCart() {
   const btnAddCart = document.querySelectorAll('.btn-add-cart')
   for (const btn of btnAddCart) {
     btn.addEventListener('click', (e) => {
-       const maSanPham = e.currentTarget.dataset.id; 
-       const products = loadProduct()
-       const sanppham = products.find(product => product.maSanPham === maSanPham )
-       if(sanppham !== null) {
-          // kien tra xem da co trong gio hang chua => findIndex
-          // co => lam gi? => cap nhat lai so luong (soluong hien tai + 1) => luu lai storage
-          // ko co thi lam gi => them vao gio hang hien tai  ? 
-          // luu lai gio hang sau khi da chinh sua
-          alert (`neu cssp thi +sl`)
-          const carts= initCart()
-          const vitri= carts.findIndex(product=>product.maSanPham===maSanPham)
-          if(vitri== -1)
-            {
-            sanppham.soluong= 1
-            carts.push(sanppham)
-            
-          }else{
-            carts[vitri].soluong += 1
-          }
-        localStorage.setItem("carts",JSON.stringify(carts))
-       alert ('san phan da luu');
-       }else {
+      const maSanPham = e.currentTarget.dataset.id;
+      const products = loadProduct()
+      const sanppham = products.find(product => product.maSanPham === maSanPham)
+      if (sanppham !== null) {
+        // kien tra xem da co trong gio hang chua => findIndex
+        // co => lam gi? => cap nhat lai so luong (soluong hien tai + 1) => luu lai storage
+        // ko co thi lam gi => them vao gio hang hien tai  ? 
+        // luu lai gio hang sau khi da chinh sua
+        alert(`neu cssp thi +sl`)
+        const carts = initCart()
+        const vitri = carts.findIndex(product => product.maSanPham === maSanPham)
+        if (vitri == -1) {
+          sanppham.soluong = 1
+          carts.push(sanppham)
+
+        } else {
+          carts[vitri].soluong += 1
+        }
+        localStorage.setItem("carts", JSON.stringify(carts))
+        alert('san phan da luu');
+      } else {
 
         alert('ma sp khong ton tai')
-       }
-       
+      }
+
     })
   }
 }
 
+const goCheckOut = document.getElementById('goCheckOut')
+
+goCheckOut?.addEventListener('click', (event) => {
+  event.preventDefault()
+  /**
+   * neu dang nhap thi goto => checkout.html
+   * neu khong redirect to login.html
+   */
+  const user = localStorage.getItem('user')
+  if (user) {
+    window.location = "checkout.html"
+  } else {
+    window.location = "login.html"
+  }
+
+})
+
+function loadUserCheckoutForm() {
+  /**
+   * localstorage user -> do du lieu vao form
+   */
+  const user = localStorage.getItem('user')
+  const customerName = document.getElementById('customerName')
+  const customerEmail = document.getElementById('customerEmail')
+
+  if (user) {
+    const userobject = JSON.parse(user)
+    customerName.value = userobject.name
+    customerEmail.value = userobject.email
+  }
+}
+
+function LoadCartCheckout() {
+  /**
+   * localstorage cart -> do du lieu vao html  
+   */
+  const carts = localStorage.getItem('carts')
+  const summaryItems = document.getElementById('checkoutItemCount')
+  const summaryTotal = document.getElementById('checkoutTotal')
+  console.log('summaryItems',summaryItems)
+  console.log('summaryTotal',summaryTotal)
+
+  if (carts) {
+    const cartsObj = JSON.parse(carts)
+
+    const summary = cartsObj.reduce((acc, item) => {
+      acc.totalPrice += item.soluong * item.giaVND;
+      acc.totalItems += item.soluong;
+      return acc;
+    }, { totalPrice: 0, totalItems: 0 });
+    console.log('carts', summary)
+    summaryItems.textContent = summary.totalItems
+    summaryTotal.textContent = formatter.format(summary.totalPrice)
+  }
+
+}
